@@ -1,7 +1,6 @@
 <template>
   <view>
-    cate
-    分类
+    
   </view>
 </template>
 
