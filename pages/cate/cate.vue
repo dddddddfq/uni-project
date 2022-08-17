@@ -1,5 +1,6 @@
 <template>
   <view>
+    <my-search @click="searchHandle">123</my-search>
     <view class="scroll-view-container">
       <!-- 左侧视图 -->
       <scroll-view scroll-y class="scroll-view-left" :style="{height:wh+'px'}">
@@ -17,8 +18,8 @@
           </view>
           <view class="cate-lv2-list">
             <view class="cate-lv2-item" v-for="(item2,i2) in item.children" :key="i2" @click="goGoodsList(item2)">
-              <!-- <image :src="item2.cat_icon"></image> -->
-              <image src="https://static.botue.com/ugo/uploads/pic_floor02_2@2x.png"></image>
+              <image :src="item2.cat_icon"></image>
+              <!-- <image src="https://static.botue.com/ugo/uploads/pic_floor02_2@2x.png"></image> -->
               <text>{{item2.cat_name}}</text>
             </view>
           </view>
@@ -31,6 +32,7 @@
 
 <script>
   export default {
+
     data() {
       return {
         cateList: [],
@@ -42,7 +44,7 @@
     },
     onLoad() {
       const stsInfo = uni.getSystemInfoSync()
-      this.wh = stsInfo.windowHeight
+      this.wh = stsInfo.windowHeight - 60
       this.getCateList()
     },
     methods: {
@@ -51,6 +53,18 @@
         if (res.statusCode !== 200) {
           return uni.$showMessage()
         }
+
+        res.data.message.forEach(item => {
+          item.children.forEach(item2 => {
+            if (item2.children) {
+              item2.children.forEach(item3 => {
+                const res = item3.cat_icon.split('/');
+                return item3.cat_icon = 'https://api-ugo-web.itheima.net' + '/' + res[3] +
+                  '/' + res[4]
+              })
+            }
+          })
+        })
         this.cateList = res.data.message
         this.cateLv2 = res.data.message[0].children
       },
@@ -64,6 +78,11 @@
         // console.log(item)
         uni.navigateTo({
           url: '/subpkg/goods_list/goods_list?cid=' + item.cat_id
+        })
+      },
+      searchHandle() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
         })
       }
     }

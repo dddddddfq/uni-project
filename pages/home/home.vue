@@ -1,5 +1,9 @@
 <template>
   <view>
+    <!-- search 组件 -->
+    <view class="search-box">
+       <my-search @click="searchHandle"></my-search>
+    </view>
     <!-- //轮播图模块 -->
     <swiper :indicator-dots="true" :interval="3000" :duration="1000" circular>
       <swiper-item v-for="(item,index) in swiperList" :key="index">
@@ -86,6 +90,11 @@
           })
         })
         this.floorList = res.message
+      },
+      searchHandle(){
+        uni.navigateTo({
+          url:'/subpkg/search/search'
+        })
       }
     }
   }
@@ -128,5 +137,11 @@
       flex-wrap: wrap;
       justify-content: space-around;
     }
+  }
+  .search-box{
+    // 添加吸顶样式
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 </style>
