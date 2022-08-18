@@ -2,7 +2,7 @@
   <view>
     <view class="my-search" @click="myHandle" :style="{'background-color':bgcolor}">
       <view class="search-box" :style="{'border-radius':radius+'px'}">
-        <uni-icons type="search" size="17" ></uni-icons>
+        <uni-icons type="search" size="17"></uni-icons>
         <text class="placeholder">搜索</text>
 
       </view>
@@ -11,24 +11,24 @@
   </view>
 </template>
 <script>
-  export default{
+  export default {
     props: {
       bgcolor: {
         type: String,
-        default:'#afd8e7'
+        default: '#afd8e7'
       },
-      radius:{
-        type:Number,
-        default:18
+      radius: {
+        type: Number,
+        default: 18
       }
     },
-    methods:{
-      myHandle(){
+    methods: {
+      myHandle() {
         this.$emit('click')
       },
-    input(e){
-      console.log(e)
-    }
+      input(e) {
+        console.log(e)
+      }
     }
   }
 </script>
@@ -37,8 +37,9 @@
     height: 60px;
     // background-color: #afd8e7;
     display: flex;
-   align-items: center;
+    align-items: center;
     padding: 0 10px;
+
     .search-box {
       width: 100%;
       height: 40px;
@@ -47,6 +48,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       .placeholder {
         font-size: 14px;
         margin-left: 5px;

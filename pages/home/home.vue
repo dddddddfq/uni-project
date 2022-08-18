@@ -13,7 +13,7 @@
       <view class="nav-item" v-for="(item,index) in navList" :key="index" @click="navClickHandler(item)">
         <image :src="item.image_src" mode="" class="nav-img"></image>
       </view>
-  
+
     </view>
     <!--  楼层模块 -->
     <view class="floor">

@@ -33,7 +33,7 @@
         timer: null,
         kw: '',
         searchResults: [],
-        historyList: ['a', 'app', 'apple'],
+        historyList: [],
       }
     },
     onLoad() {
@@ -79,6 +79,7 @@
       },
       //清除所有的搜索历史
       clean() {
+        console.log(1)
         this.historyList = []
         uni.setStorageSync('kw', '[]')
       },
