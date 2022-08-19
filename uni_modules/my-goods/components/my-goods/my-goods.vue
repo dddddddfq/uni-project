@@ -33,7 +33,7 @@
   }
 </script>
 <style lang="scss">
-  .goods-list {
+ 
     .goods-item {
       display: flex;
       flex-wrap: nowrap;
@@ -64,5 +64,5 @@
         }
       }
     }
-  }
+  
 </style>
