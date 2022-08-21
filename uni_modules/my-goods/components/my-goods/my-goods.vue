@@ -65,16 +65,11 @@
   }
 </script>
 <style lang="scss">
-<<<<<<< HEAD
   .goods-item {
     display: flex;
     flex-wrap: nowrap;
     padding: 10px 5px;
     .goods-item-left {
-=======
- 
-    .goods-item {
->>>>>>> 090f6e6f4b0c0f37c2e296181f4067f66e7f0df5
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -100,10 +95,5 @@
         font-size: 16px;
       }
     }
-<<<<<<< HEAD
   }
 </style>
-=======
-  
-</style>
->>>>>>> 090f6e6f4b0c0f37c2e296181f4067f66e7f0df5
