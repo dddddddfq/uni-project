@@ -2,7 +2,8 @@
   <view>
     <view class="goods-list">
       <view v-for="(item,i) in goodsList" :key="i" @click="gotoDetail(item)">
-        <my-goods :item="item"></my-goods>
+        <my-goods :item="item">
+        </my-goods>
       </view>
 
     </view>
@@ -49,11 +50,9 @@
         this.total = res.message.total
       },
       gotoDetail(item) {
-      
         uni.navigateTo({
           url: '/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id
         })
-
       }
     },
     onReachBottom() {

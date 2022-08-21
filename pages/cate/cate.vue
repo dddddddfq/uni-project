@@ -1,6 +1,6 @@
 <template>
   <view>
-    <my-search @click="searchHandle">123</my-search>
+    <my-search @click="searchHandle"></my-search>
     <view class="scroll-view-container">
       <!-- 左侧视图 -->
       <scroll-view scroll-y class="scroll-view-left" :style="{height:wh+'px'}">
@@ -31,8 +31,9 @@
 </template>
 
 <script>
+  import tabber from '@/mixins/tabber-bedan.js'
   export default {
-
+    mixins: [tabber],
     data() {
       return {
         cateList: [],

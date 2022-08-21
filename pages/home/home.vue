@@ -38,7 +38,9 @@
 </template>
 
 <script>
+  import tabber from '@/mixins/tabber-bedan.js'
   export default {
+    mixins: [tabber],
     data() {
       return {
         swiperList: [],

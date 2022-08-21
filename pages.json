@@ -1,13 +1,13 @@
 {
   "pages": [{
-    "path": "pages/my/my",
+    "path": "pages/home/home",
     "style": {
       // "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
 
   }, {
-    "path": "pages/home/home",
+    "path": "pages/my/my",
     "style": {
       // "navigationBarTitleText": "",
       "enablePullDownRefresh": false
