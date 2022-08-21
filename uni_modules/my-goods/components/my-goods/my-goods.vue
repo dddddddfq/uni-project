@@ -54,7 +54,6 @@
           // 商品最新的勾选状态
           goods_state: !this.item.goods_state
         })
-
       },
       changeHandle(val) {
         this.$emit('changeHandle', {
@@ -70,29 +69,24 @@
     display: flex;
     flex-wrap: nowrap;
     padding: 10px 5px;
-
     .goods-item-left {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       img {
         width: 100px;
         height: 100px;
         display: block;
       }
     }
-
     .goods-item-right {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin: 0 8px;
-
       .title {
         font-size: 14px;
       }
-
       .price {
         display: flex;
         justify-content: space-between;
